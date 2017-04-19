@@ -27,3 +27,14 @@ if (sum < 100000 ) {
     }
     return summa;
 }
+int conditions(int summa, int srok){
+if ( summa < 1000 && srok > 365 ) {
+	printf("The minimum deposit amount in 1000\nSrok vklada ne bolshe 365 dney\n");
+	return 0;
+    }
+    if (srok < 1){
+	printf("The term does not below 1 day\n");
+	return 0;
+    }	
+    return 1;
+}
