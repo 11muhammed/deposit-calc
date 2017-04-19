@@ -1,7 +1,7 @@
 #include "deposit.h"
 
 int calc(int summa, int srok){
-if (sum < 100000 ) {
+if (summa < 100000 ) {
           if (srok < 31 && srok > 0)
             summa*=0.9;
         else if (srok < 121 && srok > 30)
