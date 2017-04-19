@@ -11,8 +11,6 @@ if (sum < 100000 ) {
             summa*=1.06;
         else
             summa*=1.12;
-
-
     }
     else {
          if (srok < 31 && srok > 0)
