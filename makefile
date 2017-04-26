@@ -16,10 +16,10 @@ bin/deposit-calc-test: build/test/main.o build/test/deposit_test.o build/deposit
 	gcc build/test/main.o build/test/deposit_test.o build/deposit.o -o bin/deposit-calc-test $(CFLAGS)
 
 build/test/main.o: src/deposit.h test/main.c
-	gcc -I thirdparty src -c test/main.c -o build/test/main.o $(CFLAGS)
+	gcc -I thirdparty -I src -c test/main.c -o build/test/main.o $(CFLAGS)
 
 build/test/deposit_test.o: src/deposit.h test/deposit_test.c
-	gcc -I thirdparty src -c test/deposit_test.c -o build/test/deposit_test.o $(CFLAGS)
+	gcc -I thirdparty -I src -c test/deposit_test.c -o build/test/deposit_test.o $(CFLAGS)
 
 .PHONY: all clean test
 clean:
