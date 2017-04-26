@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctest.h>
-#include "deposit.h"
+#include <../src/deposit.h>
 
 //Check function conditions
 
