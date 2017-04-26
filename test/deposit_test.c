@@ -23,6 +23,9 @@ CTEST(cond, test5){
 CTEST(cond, test6){
     ASSERT_EQUAL(0,conditions(1000,-6));
 }
+CTEST(cond, test7){
+   ASSERT_EQUAL(1,conditions(1000,390));
+}
 
 //Check function calc
 
