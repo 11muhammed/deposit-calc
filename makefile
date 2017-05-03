@@ -1,6 +1,6 @@
 CFLAGS = -Wall -Werror 
 all: bin/deposit-calc
-	
+
 bin/deposit-calc : build/main.o build/deposit.o
 	gcc build/main.o build/deposit.o -o bin/deposit-calc $(CFLAGS)
 
@@ -12,14 +12,17 @@ build/main.o: src/main.c src/deposit.h
 
 test: bin/deposit-calc-test
 
-bin/deposit-calc-test: build/test/main.o build/test/deposit_test.o build/deposit.o
-	gcc build/test/main.o build/test/deposit_test.o build/deposit.o -o bin/deposit-calc-test $(CFLAGS)
+bin/deposit-calc-test: build/test/main.o build/test/deposit_test.o build/test/validation_test.o build/deposit.o
+	gcc build/test/main.o build/test/deposit_test.o build/test/validation_test.o build/deposit.o -o bin/deposit-calc-test $(CFLAGS)
 
 build/test/main.o: src/deposit.h test/main.c
 	gcc -I thirdparty -I src -c test/main.c -o build/test/main.o $(CFLAGS)
 
 build/test/deposit_test.o: src/deposit.h test/deposit_test.c
 	gcc -I thirdparty -I src -c test/deposit_test.c -o build/test/deposit_test.o $(CFLAGS)
+
+build/test/validation_test.o: src/deposit.h test/validation_test.c
+	gcc -I thirdparty -I src -c test/validation_test.c -o build/test/validation_test.o $(CFLAGS)
 
 .PHONY: all clean test
 clean:
